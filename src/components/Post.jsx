@@ -1,4 +1,5 @@
 import { Comment } from './Comment';
+import { Avatar } from './Avatar';
 import styles from './Post.module.css';
 
 //TODO: Ajustar cor do valor escrito em textarea;
@@ -8,7 +9,7 @@ export function Post(props) {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img src="https://github.com/LittigDev.png"/>
+                    <Avatar src="https://github.com/LittigDev.png"/>
                     <div className={styles.authorInfo}>
                         <strong>Gustavo Littig</strong>
                         <span>Web Developer</span>
