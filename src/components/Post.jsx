@@ -5,14 +5,16 @@ import styles from './Post.module.css';
 //TODO: Ajustar cor do valor escrito em textarea;
 
 export function Post(props) {
+    console.log('Props the post', props)
+
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src="https://github.com/LittigDev.png"/>
+                    <Avatar src={props.author.avatarUrl}/>
                     <div className={styles.authorInfo}>
-                        <strong>Gustavo Littig</strong>
-                        <span>Web Developer</span>
+                        <strong>{props.author.name}</strong>
+                        <span>{props.author.role}</span>
                     </div>
                 </div>
 
