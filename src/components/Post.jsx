@@ -1,4 +1,7 @@
+import { Comment } from './Comment';
 import styles from './Post.module.css';
+
+//TODO: Ajustar cor do valor escrito em textarea;
 
 export function Post(props) {
     return (
@@ -27,6 +30,12 @@ export function Post(props) {
                     <button type="submit">Publicar</button>
                 </footer>
             </form>
+
+            <div className={styles.commentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
         </article>
     )
 }
