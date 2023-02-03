@@ -8,11 +8,8 @@ import { useState } from 'react';
 //TODO: Ajustar cor do valor escrito em textarea;
 
 export function Post({ author, publishedAt, content }) {
-    const [comments, setComments] = useState([
-        'Post muito bacana ein!'
-    ]);
+    const [comments, setComments] = useState(['Post muito bacana ein!']);
     const [newCommentText, setNewCommentText] = useState('');
-
 
     const publishedDateFormatted = format(publishedAt, "dd 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
@@ -30,6 +27,10 @@ export function Post({ author, publishedAt, content }) {
 
     function handleNewCommentChange() {
         setNewCommentText(event.target.value)
+    }
+
+    function deleteComment(comment) {
+        console.log(`Deletar comentário - ${comment}`);
     }
 
     return (
@@ -80,7 +81,7 @@ export function Post({ author, publishedAt, content }) {
                 {
                     comments.map((content, id) => {
                         return (
-                            <Comment content={content} key={id}/>
+                            <Comment content={content} key={id} onDeleteComment={deleteComment}/>
                         )
                     })
                 }
